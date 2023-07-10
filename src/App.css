@@ -1,0 +1,20 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    font-size: 25px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/008/070/315/original/geometric-low-poly-graphic-repeat-pattern-background-free-vector.jpg');
+    background-attachment: fixed;
+}

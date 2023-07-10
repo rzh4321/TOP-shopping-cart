@@ -1,20 +1,23 @@
+import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
+import NoMatch from './components/NoMatch';
+import "./App.css";
+
+
+
 function App() {
+  const [items, setItems] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar count={items.length} />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='*' element={<NoMatch />} />
+      </Routes>
+    
+    </>
   );
 }
 
