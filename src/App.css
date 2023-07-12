@@ -18,3 +18,22 @@ body {
     background-image: url('https://static.vecteezy.com/system/resources/previews/008/070/315/original/geometric-low-poly-graphic-repeat-pattern-background-free-vector.jpg');
     background-attachment: fixed;
 }
+
+.grid {
+    font-size: 23px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+}
