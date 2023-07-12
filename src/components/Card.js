@@ -1,14 +1,22 @@
-function Card({obj}) {
+function Card({itemInfo, count}) {
+    // console.log(itemInfo)
+    // console.log(count)
     const styles = {
-        backgroundImage: `url(${obj.url})`,
-        backgroundSize: "cover",
-        backgroundPosition: (obj.pos === undefined)? "center": obj.pos,
+        backgroundImage: `url(${itemInfo.url_back})`,
+        backgroundSize: "contain",
+        backgroundPosition: (itemInfo.pos === undefined)? "center": itemInfo.pos,
+        height: "100%",
+        backgroundRepeat: "no-repeat"
     }
     return (
         <>
           <div className="card">
+            <div className="item-bar">
+                {count && <span>{count}</span>}
+            </div>
             <div style={styles}></div>
-            <span>{obj.name}</span>
+            <span>{itemInfo.price}</span>
+            <span>{itemInfo.name}</span>
           </div>
         </>
       );

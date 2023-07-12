@@ -15,17 +15,14 @@ a {
 
 body {
     margin: 0;
-    background-image: url('https://static.vecteezy.com/system/resources/previews/008/070/315/original/geometric-low-poly-graphic-repeat-pattern-background-free-vector.jpg');
+    background-color: white;
     background-attachment: fixed;
 }
 
 .grid {
-    font-size: 23px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
-    padding: 10px;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .desc {
@@ -36,4 +33,39 @@ body {
     background-color: blue;
     color: white;
     padding: 10px;
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 280px;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.card:hover, button:hover {
+    box-shadow: 0px 0px 30px #8ab661;
+}
+
+.card .img {
+    margin: 5px;
+    width: 265px;
+    height: 265px;
+    border-radius: 15px;
+}
+
+span {
+    text-align: center;
+}
+
+.item-bar {
+    display: flex;
+    justify-content: space-between;
 }

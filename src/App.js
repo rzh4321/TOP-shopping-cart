@@ -9,7 +9,7 @@ import "./App.css";
 
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([{name: "Donte DiVincenzo Nike Icon Swingman Jersey1", count: 2}]);
   return (
     <>
       <NavBar count={cart.length} />
