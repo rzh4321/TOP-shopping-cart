@@ -5,17 +5,18 @@ export default function NavBar({count, price}) {
     return (
         <>
             <nav className='navbar'>
-                <NavLink to='/'>Home</NavLink>
                 <NavLink to='shop'>Shop</NavLink>
                 <div className='icons'>
-                    <i class="fa-solid fa-house"></i>
+                    <NavLink to='/'>
+                        <i class="fa-solid fa-house"></i>
+                    </NavLink>
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <i class="fa-solid fa-user"></i>
                     <div>
                         <NavLink to='/'>
-                            <span class='display-count'>{count}</span>
+                            <span class='display-total-count'>{count}</span>
                             <i class="fa-solid fa-cart-shopping"></i>
-                            </NavLink>
+                        </NavLink>
 
                     </div>
                     <span>{price}</span>

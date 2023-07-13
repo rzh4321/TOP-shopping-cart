@@ -22,7 +22,7 @@ body {
 }
 
 .grid {
-    margin-top: 100px;
+    margin: 100px 10px 10px 10px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
@@ -67,10 +67,6 @@ span {
     text-align: center;
 }
 
-.item-bar {
-    display: flex;
-    justify-content: space-between;
-}
 
 .shop-navbar {
     display: flex;
@@ -85,7 +81,7 @@ span {
     gap: 5px;
 }
 
-.display-count {
+.display-total-count {
     display: inline-block;
     position: relative;
     left: 3px;
@@ -99,6 +95,21 @@ span {
     text-align: center;
     padding: 2px 0px 0px 0px;
 }
+
+.display-item-count {
+    display: inline-block;
+    color: black;
+    border-radius: 50%;
+    width: 30px;
+    background-color: #003ca6;
+    color: white;
+    border: 1px solid black;
+    height: 30px;
+    font-size: 25px;
+    text-align: center;
+    padding: 2px 0px 0px 0px;
+}
+
 
 .icons {
     font-size: 18px;
@@ -122,4 +133,18 @@ span {
 
 .navbar span {
     cursor: pointer;
+}
+
+.card input {
+    width: 20px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.filler {
+    height: 30px;
 }
