@@ -12,7 +12,7 @@ function App() {
   const [cart, setCart] = useState([{name: "Donte DiVincenzo Nike Icon Swingman Jersey1", count: 2}]);
   return (
     <>
-      <NavBar count={cart.length} />
+      <NavBar count={cart.length} price={'$2.00'} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='shop' element={<Shopping cart={cart} />} />

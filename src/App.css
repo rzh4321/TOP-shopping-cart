@@ -4,9 +4,11 @@
     align-items: center;
     background-color: red;
     font-size: 25px;
-    padding: 10px;
+    padding: 30px;
     margin-bottom: 10px;
     border: none;
+    color: #003ca6;
+    font-family: Helvetica,Arial,sans-serif;
 }
 
 a {
@@ -39,7 +41,7 @@ body {
     border: 1px solid black;
     border-radius: 15px;
     width: 280px;
-    height: 300px;
+    height: 360px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -68,4 +70,56 @@ span {
 .item-bar {
     display: flex;
     justify-content: space-between;
+}
+
+.shop-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+}
+
+.shop-category {
+    display: flex;
+    gap: 5px;
+}
+
+.display-count {
+    display: inline-block;
+    position: relative;
+    left: 3px;
+    bottom: 8px;
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 13px;
+    text-align: center;
+    padding: 2px 0px 0px 0px;
+}
+
+.icons {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.icons i {
+    background-color: white;
+    border-radius: 50%;
+    padding: 8px 10px 8px 8px;
+    cursor: pointer;
+}
+
+.icons i:hover {
+    background-color: lightgray;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar span {
+    cursor: pointer;
 }
