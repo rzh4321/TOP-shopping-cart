@@ -46,8 +46,8 @@ export default function Shopping({cart, changeQuantity, title}) {
             <hr style={{width: '80%'}}></hr>
             <div className='filter'>
                 <span>Results</span>
-                <select onChange={(e) => setFilter(e.target.value)}>
-                    <option value="Featured" selected>Featured</option>
+                <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+                    <option value="Featured">Featured</option>
                     <option value="Name A-Z">Name (A-Z)</option>
                     <option value="Name Z-A">Name (Z-A)</option>
                     <option value="Price L-H">Price (low to high)</option>

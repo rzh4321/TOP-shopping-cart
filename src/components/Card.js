@@ -23,9 +23,9 @@ function Card({itemInfo, count, changeQuantity}) {
                 {!hovering && count === 0 && <div className='filler'></div>}
                 {hovering && (
                     <>
-                        <button onClick={() => changeQuantity(count-1, itemInfo.name)}>-</button>
+                        <button style={{"backgroundColor": "red"}} onClick={() => changeQuantity(count-1, itemInfo.name)}>-</button>
                         <input type='number' value={count} min='0' onChange={(e) => changeQuantity(+e.target.value, itemInfo.name)} />
-                        <button onClick={() => changeQuantity(count+1, itemInfo.name)}>+</button>
+                        <button style={{"backgroundColor": "green"}} onClick={() => changeQuantity(count+1, itemInfo.name)}>+</button>
                     </>
                         )}
             </div>
