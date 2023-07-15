@@ -11,16 +11,16 @@ function Card({itemInfo, count, changeQuantity}) {
         backgroundRepeat: "no-repeat"
     }
 
-    useEffect(() => {
-        console.log(itemInfo.name);
-    })
+    // useEffect(() => {
+    //     console.log(itemInfo.name);
+    // })
 
     return (
         <>
-          <div className="card" onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
+          <div className="card" id={itemInfo.name} onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
             <div>
-                {!hovering && count > 0 && <span class='display-item-count'>{count}</span>}
-                {!hovering && count === 0 && <div class='filler'></div>}
+                {!hovering && count > 0 && <span className='display-item-count'>{count}</span>}
+                {!hovering && count === 0 && <div className='filler'></div>}
                 {hovering && (
                     <>
                         <button onClick={() => changeQuantity(count-1, itemInfo.name)}>-</button>
@@ -30,8 +30,8 @@ function Card({itemInfo, count, changeQuantity}) {
                         )}
             </div>
             <div style={styles}></div>
-            <span>{itemInfo.price}</span>
-            <span>{itemInfo.name}</span>
+            <span className='price'>{itemInfo.price}</span>
+            <span className='item-name'>{itemInfo.name}</span>
           </div>
         </>
       );

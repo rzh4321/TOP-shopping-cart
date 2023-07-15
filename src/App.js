@@ -10,7 +10,7 @@ import cloneDeep from 'lodash/cloneDeep';
 
 
 export default function App() {
-  const [cart, setCart] = useState([{name: "Donte DiVincenzo Nike Icon Swingman Jersey1", count: 2}]);
+  const [cart, setCart] = useState([]);
 
   function changeQuantity(quantity, itemName) {
     if (quantity >= 0) {
@@ -21,18 +21,21 @@ export default function App() {
         newCart.push(item);
       } 
       item.count = quantity;
+      if (item.count === 0) {
+        newCart.splice(newCart.indexOf(item), 1);
+      }
       setCart(newCart);
     }
   }
 
 
-  useEffect(() => console.log(cart));
+  // useEffect(() => console.log(cart));
   return (
     <>
       <NavBar count={cart.length} price={'$2.00'} />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='shop' element={<Shopping cart={cart} changeQuantity={changeQuantity} />} />
+        <Route path='shop' element={<Shopping cart={cart} changeQuantity={changeQuantity} title="Knicks Mens Jerseys" />} />
 
         <Route path='*' element={<NoMatch />} />
       </Routes>

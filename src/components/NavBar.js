@@ -57,6 +57,7 @@ export default function NavBar({count, price}) {
                     <i class="fa-solid fa-caret-down"></i>
                 </span>
             </nav>
+            <hr />
         </>
     )
 }

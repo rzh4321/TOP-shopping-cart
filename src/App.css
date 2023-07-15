@@ -22,9 +22,9 @@ body {
 }
 
 .grid {
-    margin: 100px 10px 10px 10px;
+    margin: 100px 4% 10px 10%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .desc {
@@ -40,7 +40,7 @@ body {
 .card {
     border: 1px solid black;
     border-radius: 15px;
-    width: 280px;
+    width: 220px;
     height: 360px;
     overflow: hidden;
     display: flex;
@@ -73,12 +73,18 @@ span {
     justify-content: center;
     align-items: center;
     gap: 50px;
-
+    padding: 10px;
 }
 
 .shop-category {
     display: flex;
     gap: 5px;
+}
+
+.shop-title {
+    margin: 30px 0px 60px 10%;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .display-total-count {
@@ -122,7 +128,7 @@ span {
 .icons i {
     background-color: white;
     border-radius: 50%;
-    padding: 8px 10px 8px 8px;
+    padding: 8px;
     cursor: pointer;
 }
 
@@ -147,4 +153,17 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .filler {
     height: 30px;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter span {
+    margin: 30px 0px 0px 10%;
+}
+
+.filter select {
+    margin: 30px 10% 0px 0px;
 }
