@@ -35,9 +35,6 @@ export default function Shopping({cart, changeQuantity, title}) {
         }
 
     }
-    // useEffect(() => {
-    //     console.log(filter);
-    // })
     sortCart(items)
     const arr = items.map((obj, ind) => <Card itemInfo={obj} count={findCount(obj.name)} changeQuantity={changeQuantity} key={obj.name} />)
     return (
