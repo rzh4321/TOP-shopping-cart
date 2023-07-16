@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/TOP-shopping-cart/static/css/main.f9e7fcac.css",
-    "main.js": "/TOP-shopping-cart/static/js/main.5804d0c5.js",
+    "main.js": "/TOP-shopping-cart/static/js/main.3af38e93.js",
     "index.html": "/TOP-shopping-cart/index.html",
     "main.f9e7fcac.css.map": "/TOP-shopping-cart/static/css/main.f9e7fcac.css.map",
-    "main.5804d0c5.js.map": "/TOP-shopping-cart/static/js/main.5804d0c5.js.map"
+    "main.3af38e93.js.map": "/TOP-shopping-cart/static/js/main.3af38e93.js.map"
   },
   "entrypoints": [
     "static/css/main.f9e7fcac.css",
-    "static/js/main.5804d0c5.js"
+    "static/js/main.3af38e93.js"
   ]
 }
