@@ -164,6 +164,10 @@ span {
     color: black;
 }
 
+.icons i {
+    color: black;
+}
+
 i {
     cursor: pointer;
 }
