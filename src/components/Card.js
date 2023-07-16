@@ -4,11 +4,12 @@ import React, { useState, useEffect } from 'react';
 function Card({itemInfo, count, changeQuantity}) {
     const [hovering, setHovering] = useState(false);
     const styles = {
-        backgroundImage: `url(${itemInfo.url_back})`,
+        backgroundImage: hovering? `url(${itemInfo.url_front})` : `url(${itemInfo.url_back})`,
         backgroundSize: "contain",
         backgroundPosition: (itemInfo.pos === undefined)? "center": itemInfo.pos,
         height: "100%",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
+        transition: "0.2s ease-in-out"
     }
 
     // useEffect(() => {

@@ -61,9 +61,7 @@ body {
     border: none;
 }
 
-.card:hover, button:hover {
-    box-shadow: 0px 0px 30px #8ab661;
-}
+
 
 .card .img {
     margin: 5px;
