@@ -45,6 +45,8 @@ export default function App() {
       <NavBar count={cart.length} price={getTotal()} />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/TOP-shopping-cart/' element={<Home />} />
+
         <Route path='shop' element={<Shopping cart={cart} changeQuantity={changeQuantity} title="Knicks Mens Jerseys" />} />
 
         <Route path='*' element={<NoMatch />} />
