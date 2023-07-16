@@ -12,12 +12,12 @@ import cloneDeep from 'lodash/cloneDeep';
 export default function App() {
   const [cart, setCart] = useState([]);
 
-  function changeQuantity(quantity, itemName) {
+  function changeQuantity(quantity, itemName, price) {
     if (quantity >= 0) {
       const newCart = cloneDeep(cart);
       let item = newCart.find(obj => obj.name === itemName);
       if (item === undefined) {
-        item = {name: itemName};
+        item = {name: itemName, cost: price};
         newCart.push(item);
       } 
       item.count = quantity;
@@ -28,11 +28,21 @@ export default function App() {
     }
   }
 
+  function getTotal() {
+    let tot = 0;
+    for (const item of cart) {
+      console.log(item);
+      tot += (item.cost * item.count);
+    }
+
+    return tot.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+  }
+
 
   // useEffect(() => console.log(cart));
   return (
     <>
-      <NavBar count={cart.length} price={'$2.00'} />
+      <NavBar count={cart.length} price={getTotal()} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='shop' element={<Shopping cart={cart} changeQuantity={changeQuantity} title="Knicks Mens Jerseys" />} />

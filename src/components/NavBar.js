@@ -71,10 +71,10 @@ export default function NavBar({count, price}) {
                     <Link to='/shop'><i className="fa-solid fa-shirt"></i>Jerseys</Link>
                     <Link to='/shop'><i className="fa-solid fa-person"></i>Men</Link>
                     <Link to='/shop'><i className="fa-solid fa-person-dress"></i>Women</Link>
-                    <Link to='/shop'>Headwear</Link>
-                    <Link to='/shop'>Youth</Link>
-                    <Link to='/shop'>Novelties</Link>
-                    <Link to='/shop'>Sale</Link>
+                    <Link to='/shop'><i className="fa-solid fa-hat-cowboy"></i>Headwear</Link>
+                    <Link to='/shop'><i className="fa-solid fa-child"></i>Youth</Link>
+                    <Link to='/shop'><i className="fa-solid fa-gem"></i>Novelties</Link>
+                    <Link to='/shop'><i className="fa-solid fa-tags"></i>Sale</Link>
             </div>
             <hr />
         </>
