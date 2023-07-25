@@ -1,9 +1,12 @@
 import Card from "./Card";
 import {items} from "./items";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom"
 
 export default function Shopping({cart, changeQuantity, title}) {
-    const [filter, setFilter] = useState("Featured");
+    const [searchParams, setSearchParams] = useSearchParams();
+    const filter = searchParams.get("filter");
+
 
     function findCount(itemName) {
         const item = cart.find(cartItem => cartItem.name === itemName);
@@ -12,14 +15,14 @@ export default function Shopping({cart, changeQuantity, title}) {
     }
 
     function sortCart(arr) {
-        if (filter === "Featured") return;
-        else if (filter === "Name A-Z") {
+        if (filter === "featured" || filter === null) return;
+        else if (filter === "name-a-z") {
             arr.sort((a, b) => a.name.localeCompare(b.name));
         }
-        else if (filter === "Name Z-A") {
+        else if (filter === "name-z-a") {
             arr.sort((a, b) => a.name.localeCompare(b.name)).reverse();
         }
-        else if (filter === "Price L-H") {
+        else if (filter === "price-l-h") {
             arr.sort((a, b) => {
                 const costA = parseFloat(a.price.slice(1)); // Convert "$X.XX" to a number
                 const costB = parseFloat(b.price.slice(1)); // Convert "$X.XX" to a number
@@ -43,12 +46,12 @@ export default function Shopping({cart, changeQuantity, title}) {
             <hr style={{width: '80%'}}></hr>
             <div className='filter'>
                 <span>Results</span>
-                <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-                    <option value="Featured">Featured</option>
-                    <option value="Name A-Z">Name (A-Z)</option>
-                    <option value="Name Z-A">Name (Z-A)</option>
-                    <option value="Price L-H">Price (low to high)</option>
-                    <option value="Price H-L">Price (high to low)</option>
+                <select value={filter} onChange={(e) => setSearchParams({filter: e.target.value})}>
+                    <option value="featured">Featured</option>
+                    <option value="name-a-z">Name (A-Z)</option>
+                    <option value="name-z-a">Name (Z-A)</option>
+                    <option value="price-l-h">Price (low to high)</option>
+                    <option value="price-h-l">Price (high to low)</option>
                 </select>
             </div>
             <div className="grid">
