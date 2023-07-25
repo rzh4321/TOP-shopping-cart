@@ -1,4 +1,4 @@
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, Outlet } from 'react-router-dom';
 import { useState } from 'react';
 
 // https://logos-world.net/wp-content/uploads/2020/05/New-York-Knicks-subway-logo.png
@@ -77,6 +77,7 @@ export default function NavBar({count, price}) {
                     <Link to='/shop'><i className="fa-solid fa-tags"></i>Sale</Link>
             </div>
             <hr />
+            <Outlet />
         </>
     )
 }

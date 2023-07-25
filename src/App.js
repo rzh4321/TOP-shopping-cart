@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
@@ -11,6 +11,16 @@ import cloneDeep from 'lodash/cloneDeep';
 
 export default function App() {
   const [cart, setCart] = useState([]);
+
+  const router = createBrowserRouter(createRoutesFromElements(
+    <Route path='/' element={<NavBar count={cart.length} price={getTotal()} />} >
+    <Route index element={<Home />} />
+
+    <Route path='shop' element={<Shopping cart={cart} changeQuantity={changeQuantity} title="Knicks Mens Jerseys" />} />
+
+    <Route path='*' element={<NoMatch />} />
+  </Route>
+  ))
 
   function changeQuantity(quantity, itemName, price) {
     if (quantity >= 0) {
@@ -41,17 +51,6 @@ export default function App() {
 
   // useEffect(() => console.log(cart));
   return (
-    <>
-      <NavBar count={cart.length} price={getTotal()} />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/TOP-shopping-cart/' element={<Home />} />
-
-        <Route path='shop' element={<Shopping cart={cart} changeQuantity={changeQuantity} title="Knicks Mens Jerseys" />} />
-
-        <Route path='*' element={<NoMatch />} />
-      </Routes>
-    
-    </>
+    <RouterProvider router={router} />
   );
 }
